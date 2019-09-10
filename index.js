@@ -14,8 +14,8 @@ app.use((_, res, next) => {
 
 app.use(async (_, __, next) => {
   await mongoose.connect(process.env.DB_URI, {
-    connectTimeoutMs: 5000,
     useNewUrlParser: true,
+    useUnifiedTopology: true,
   })
   next()
 })
